@@ -1,11 +1,14 @@
-.PHONY: test syncdb migrate run
+.PHONY: test syncdb migrate run unittest
 PYTHONPATH=`pwd`
 
 test:
-	$ python functional_tests/all_users.py
+	$ python manage.py test functional_tests
 
 run:
 	$ python manage.py runserver
+
+unittest:
+	$ python manage.py test taskbuster.test
 
 migrate:
 	PYTHONPATH=`pwd` $ python manage.py runserver migrate
