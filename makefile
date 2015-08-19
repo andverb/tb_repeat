@@ -2,13 +2,10 @@
 PYTHONPATH=`pwd`
 
 test:
-	$ python manage.py test functional_tests
+	$ coverage run --source='.' manage.py test
 
 run:
 	$ python manage.py runserver
-
-unittest:
-	$ python manage.py test taskbuster.test
 
 migrate:
 	PYTHONPATH=`pwd` $ python manage.py runserver migrate
